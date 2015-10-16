@@ -15,6 +15,12 @@ class CreateTower extends Migration {
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('country');
+            $table->boolean('active');
+            $table->timestamps();
         });
     }
 
