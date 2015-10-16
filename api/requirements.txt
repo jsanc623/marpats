@@ -1,0 +1,8 @@
+flask
+flask-sqlalchemy
+flask-multiconfig
+flask-csrf
+flask-utils
+flask-simple-api
+Flask-Restful
+
