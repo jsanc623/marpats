@@ -3,18 +3,19 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Package extends Migration {
-    var $table = 'package';
+class CreateUnit extends Migration {
+    private $table = "unit";
 
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create($this->table, function (Blueprint $table) {
+    public function up(){
+        Schema::create($this->table, function (Blueprint $table){
             $table->increments('id');
+            $table->integer('mailroom_id'); # mailroom relationship
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -24,8 +25,7 @@ class Package extends Migration {
      *
      * @return void
      */
-    public function down()
-    {
+    public function down(){
         Schema::drop($this->table);
     }
 }

@@ -3,17 +3,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTower extends Migration {
-    var $table = 'tower';
+class CreateMailroom extends Migration {
+    private $table = "mailroom";
 
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create($this->table, function (Blueprint $table) {
+    public function up() {
+        Schema::create($this->table, function (Blueprint $table){
             $table->increments('id');
             $table->string('address');
             $table->string('city');
@@ -29,8 +28,7 @@ class CreateTower extends Migration {
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::drop($this->table);
     }
 }
