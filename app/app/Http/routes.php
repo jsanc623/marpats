@@ -9,12 +9,18 @@
 # Patterns
 Route::pattern('id', '[0-9]+');
 
-# Homepage
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+# Website routes
+Route::get('/', ['as' => 'website-home', 'uses' => 'WebsiteController@index']);
+Route::get('/capture', ['as' => 'website-capture', 'uses' => 'WebsiteController@capture']);
 
-# Admin areas
+# Admins admin
 Route::group(['prefix' => 'admin'], function (){
     Route::get('/', ['as' => 'admin-home', 'uses' => 'AdminController@index']);
+});
+
+# Users admin
+Route::group(['prefix' => 'mailroom'], function (){
+    Route::get('/', ['as' => 'mailroom-home', 'uses' => 'UsersController@index']);
 });
 
 /**
