@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'f9sDF24@#$90rd0x9c0x009vcADF@#@$'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'log' => 'single',
+    'log' => 'syslog',
 
     /*
     |--------------------------------------------------------------------------
@@ -145,6 +145,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * 3rd Party Service Providers
+         */
+        Zizaco\Entrust\EntrustServiceProvider::class,
+
     ],
 
     /*
@@ -193,6 +198,11 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        /*
+         * 3rd Party Aliases
+         */
+        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
 
     ],
 
