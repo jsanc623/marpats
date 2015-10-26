@@ -148,7 +148,7 @@ return [
         /*
          * 3rd Party Service Providers
          */
-        Zizaco\Entrust\EntrustServiceProvider::class,
+        'Zizaco\Entrust\EntrustServiceProvider',
 
     ],
 
@@ -202,7 +202,7 @@ return [
         /*
          * 3rd Party Aliases
          */
-        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
+        'Entrust' => 'Zizaco\Entrust\EntrustFacade',
 
     ],
 
