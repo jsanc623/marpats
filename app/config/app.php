@@ -149,6 +149,7 @@ return [
          * 3rd Party Service Providers
          */
         'Zizaco\Entrust\EntrustServiceProvider',
+        'Stolz\Assets\Laravel\ServiceProvider',
 
     ],
 
