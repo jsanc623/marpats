@@ -1,26 +1,5 @@
 #!/bin/bash
 
-##
-# Laravel specific actions
-##
-
-## Composer update
-composer update
-
-## Publish vendor configs, etc
-php artisan vendor:publish
-
-## Push our migrations
-php artisan migrate
-
-## Push Zizaco Entrust migrations
-php artisan entrust:migration
-
-##
-# Javascript and CSS libraries/frameworks/packages
-##
-
-# Head into our public folder
 if [ -d public ]; then
     cd public
     mkdir javascript && mkdir stylesheet && mkdir fonts
@@ -62,27 +41,6 @@ if [ -d public ]; then
     mkdir stylesheet
     cd stylesheet
 fi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
