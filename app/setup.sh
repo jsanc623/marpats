@@ -29,12 +29,12 @@ if [ -d public ]; then
     mkdir bootstrap && cd bootstrap
     git clone https://github.com/twbs/bootstrap.git .
     mkdir ../javascript/bootstrap
-    mv dist/css ../stylesheet/bootstrap
+    mv dist/js/* ../javascript/bootstrap
     mkdir ../stylesheet/bootstrap
-    mv dist/js ../javascript/bootstrap
-    mv dist/fonts ../fonts
+    mv dist/css/* ../stylesheet/bootstrap
+    mv dist/fonts/* ../fonts
 
-    cd javascript
+    cd ../javascript
 
     # Javascript repos
     jreps[0]="https://github.com/wootapa/watable.git"
@@ -48,20 +48,44 @@ if [ -d public ]; then
     jreps[9]="https://github.com/simsalabim/sisyphus.git"
     jreps[10]="https://github.com/dmauro/Keypress.git"
 
+    echo $(pwd)
+
     for i in "${jreps[@]}"
     do
        :
        dir=$(echo ${i} | cut -d/ -f 5 | cut -d. -f 1)
        mkdir ${dir}
        cd ${dir}
-       #git clone ${i}
+       git clone ${i}
        cd ../
     done
 
     cd ../
-    mkdir stylesheet
-    cd stylesheet
+    rm -r bootstrap
 fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
